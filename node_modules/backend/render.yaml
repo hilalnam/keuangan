@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: keuangan-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace=apps/backend
+    startCommand: npm run start --workspace=apps/backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: ALLOW_ANONYMOUS
+        value: true
+      - key: DEV_USER_ID
+        value: dev-user
+      - key: BETTER_AUTH_SECRET
+        generateValue: true
+      - key: BETTER_AUTH_URL
+        fromService:
+          type: web
+          name: keuangan-backend
+          property: host
