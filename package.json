@@ -10,7 +10,6 @@
     "dev:frontend": "npm run dev --workspace=apps/frontend",
     "dev:backend": "npm run dev --workspace=apps/backend",
     "build": "npm run build --workspace=apps/backend && npm run build --workspace=apps/frontend",
-    "prepare": "npm run build",
     "start": "npm run start --workspace=apps/backend",
     "db:generate": "npm run db:generate --workspace=apps/backend",
     "db:migrate": "npm run db:migrate --workspace=apps/backend",
