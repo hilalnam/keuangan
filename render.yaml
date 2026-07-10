@@ -3,14 +3,18 @@ services:
     name: keuangan-backend
     env: node
     plan: free
-    root: apps/backend
-    buildCommand: npm install && npm run build
-    startCommand: npm run start
+    buildCommand: npm install && npm run build --workspace=apps/backend
+    startCommand: npm run start --workspace=apps/backend
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
+      - key: DATABASE_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
       - key: ALLOW_ANONYMOUS
         value: true
       - key: DEV_USER_ID

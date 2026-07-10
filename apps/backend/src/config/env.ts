@@ -9,7 +9,7 @@ function getEnv(key: string, fallback?: string): string {
 }
 
 export const env = {
-  DATABASE_URL: getEnv('DATABASE_URL', 'postgresql://neondb_owner:npg_XLux4R0gPTIS@ep-quiet-butterfly-at6rxvmg-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'),
+  DATABASE_URL: getEnv('DATABASE_URL'),
   BETTER_AUTH_SECRET: getEnv('BETTER_AUTH_SECRET', 'dev-secret-change-me'),
   BETTER_AUTH_URL: getEnv('BETTER_AUTH_URL', 'http://localhost:3001'),
   FRONTEND_URL: getEnv('FRONTEND_URL', 'http://localhost:5173'),
